@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', function () {
     const input = document.querySelector('input');
 
     function mouseEvents (callback) {
-        for (var i = 0; i < items.length; i++) {
+        for (let i = 0; i < items.length; i++) {
             items[i].onmouseover = e => {
                 callback(e.target, true);
             }
@@ -18,11 +18,11 @@ window.addEventListener('DOMContentLoaded', function () {
         // }   else {
         //     item.querySelector('div').classList.remove('view');
         // }
+        if (!item.querySelector('div')) return;   // ошибка при ховере дескришина
         bool ? item.querySelector('div').classList.add('view') : 
                item.querySelector('div').classList.remove('view')
     });
 
     input.oninput = e => {
-        //
     }
 });
