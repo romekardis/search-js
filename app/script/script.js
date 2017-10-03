@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', function () {
     const items = document.querySelectorAll('.items__item');
-    
+    const input = document.querySelector('input');
 
     function mouseEvents (callback) {
         for (var i = 0; i < items.length; i++) {
@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 callback(e.target, false);
             }
         }
-    }
+    };
     mouseEvents(function (item, bool) {
         // if (bool) {
         //     item.querySelector('div').classList.add('view')
@@ -20,5 +20,9 @@ window.addEventListener('DOMContentLoaded', function () {
         // }
         bool ? item.querySelector('div').classList.add('view') : 
                item.querySelector('div').classList.remove('view')
-    })
+    });
+
+    input.oninput = e => {
+        //
+    }
 });
